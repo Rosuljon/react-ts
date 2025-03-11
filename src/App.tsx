@@ -12,9 +12,7 @@ function App() {
   return (
     <div>
       <NewTodo onAddTodo={onAddTodo} />
-      <Todos items={todos}>
-        <p>This is additional content inside Todos.</p>
-      </Todos>
+      <Todos items={todos} />
     </div>
   );
 }
