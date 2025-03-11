@@ -1,4 +1,5 @@
 import Todo from "../modals/todo";
+import TodoItem from "./TodoItem";
 type todosProps = {
   items: Todo[];
   children?: React.ReactNode;
@@ -9,7 +10,7 @@ export const Todos = (props: todosProps) => {
     <div>
       <ul>
         {props.items.map((item) => (
-          <li key={item.id}>{item.text}</li>
+          <TodoItem key={item.id} text={item.text} />
         ))}
       </ul>
       {props.children}
