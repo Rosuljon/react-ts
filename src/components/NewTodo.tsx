@@ -11,11 +11,13 @@ const NewTodo = () => {
       return;
     }
     todosCtx.addTodo(todoText);
+    todoTextInputRef.current!.value = "";
+    todoTextInputRef.current!.focus();
   };
   return (
     <form className={classes.form} onSubmit={submitHandler}>
       <label htmlFor="text">Todo Text</label>
-      <input type="text" id="text" ref={todoTextInputRef} />
+      <input required type="text" id="text" ref={todoTextInputRef} />
       <button>Add Todo</button>
     </form>
   );
