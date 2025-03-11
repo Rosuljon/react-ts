@@ -8,11 +8,14 @@ function App() {
   const onAddTodo = (text: string) => {
     setTodos([...todos, new Todo(text)]);
   };
+  const removeHandler = (id: string) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
   const [todos, setTodos] = useState<Todo[]>([]);
   return (
     <div>
       <NewTodo onAddTodo={onAddTodo} />
-      <Todos items={todos} />
+      <Todos removeTodo={removeHandler} items={todos} />
     </div>
   );
 }
